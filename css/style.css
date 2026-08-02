@@ -58,10 +58,6 @@ h1,h2,h3{
   html{scroll-behavior:auto;}
 }
 
-/* ---------- photo slot placeholders ----------
-   Intentional CSS-only placeholder pattern — never a broken <img>.
-   Swap individual sections for real <img>/background-image markup
-   once real photography is supplied (see /assets/images/README.md). */
 .photo-slot{
   position:relative;
   width:100%;
@@ -111,12 +107,6 @@ h1,h2,h3{
   max-width:70%;
   line-height:1.4;
 }
-
-/* ================= BRAND MARK (interim text logo) =================
-   Standing in for the real logo file until it's sourced from the
-   original rtech-mockup.html (base64) or supplied fresh by Mike.
-   Swap for a real <img src="/assets/images/logo/logo.svg"> — see
-   /assets/images/logo/README.md for exact steps. */
 
 /* ================= NAV ================= */
 .nav{
