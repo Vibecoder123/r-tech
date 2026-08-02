@@ -117,23 +117,6 @@ h1,h2,h3{
    original rtech-mockup.html (base64) or supplied fresh by Mike.
    Swap for a real <img src="/assets/images/logo/logo.svg"> — see
    /assets/images/logo/README.md for exact steps. */
-.brand-mark{
-  font-family:'Anton',sans-serif;
-  font-size:20px;
-  letter-spacing:.02em;
-  color:var(--offwhite);
-  display:flex;
-  flex-direction:column;
-  line-height:1;
-}
-.brand-mark span{
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  letter-spacing:.16em;
-  color:var(--amber);
-  margin-top:4px;
-}
-.brand-mark:hover{color:var(--offwhite);}
 
 /* ================= NAV ================= */
 .nav{
