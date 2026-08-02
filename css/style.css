@@ -148,6 +148,7 @@ h1,h2,h3{
   display:inline-block;
   cursor:pointer;
   border:none;
+  white-space: nowrap; /* safeguard against any future squeeze */
 }
 .btn-primary{
   background:var(--red);
@@ -442,4 +443,8 @@ footer{
 ::selection{ background:var(--red); color:var(--offwhite); }
 a:focus-visible, button:focus-visible, input:focus-visible{
   outline:2px solid var(--amber); outline-offset:2px;
+}
+
+@media (max-width: 480px) {
+  .nav-brand img { height: 32px; }
 }
