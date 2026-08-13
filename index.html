@@ -144,39 +144,51 @@
     <div class="section-head reveal">
       <span class="eyebrow">A running record of the work</span>
       <h2>Recent jobs.</h2>
-      <p>Six live slots, updated as work is finished. Real photography, mixed across mechanical, bodywork, restoration and conversion — not a single stock shot.</p>
+      <p>Three live slots, updated as work is finished. Real photography across bodywork, restoration and conversion — not a single stock shot.</p>
     </div>
-    <!-- Real assets: assets/images/gallery/job-0118.jpg etc. (6 slots) -->
+    <!-- Real assets: assets/images/gallery/job-XXXX/1.jpg, 2.jpg, 3.jpg, 4.jpg (one subfolder per job) -->
     <div class="gallery-grid reveal">
-      <div class="gallery-item photo-slot">
-        <div class="photo-slot-center"><svg class="slot-icon" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/></svg></div>
-        <div class="slot-tag">BODYSHOP</div>
-        <div class="slot-label"><span>JOB #0118</span><span>Front bumper respray</span></div>
+      <div class="gallery-item"
+           style="background-image:url('assets/images/gallery/job-0118/1.jpg');"
+           data-gallery='[
+             {"src":"assets/images/gallery/job-0118/1.jpg","caption":"Stripped back to bare metal"},
+             {"src":"assets/images/gallery/job-0118/2.jpg","caption":"Panel repair underway"},
+             {"src":"assets/images/gallery/job-0118/3.jpg","caption":"Primed and masked"},
+             {"src":"assets/images/gallery/job-0118/4.jpg","caption":"Colour-matched, finished"}
+           ]'>
+        <span class="gallery-item__tag">BODYSHOP</span>
+        <div class="gallery-item__overlay">
+          <h3 class="gallery-item__title">Front bumper respray</h3>
+          <p class="gallery-item__type">JOB #0118</p>
+        </div>
       </div>
-      <div class="gallery-item photo-slot">
-        <div class="photo-slot-center"><svg class="slot-icon" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/></svg></div>
-        <div class="slot-tag">RESTORATION</div>
-        <div class="slot-label"><span>JOB #0142</span><span>Mk2 rebuild</span></div>
+      <div class="gallery-item"
+           style="background-image:url('assets/images/gallery/job-0142/1.jpg');"
+           data-gallery='[
+             {"src":"assets/images/gallery/job-0142/1.jpg","caption":"Frame stripped for rebuild"},
+             {"src":"assets/images/gallery/job-0142/2.jpg","caption":"Mechanical rebuild underway"},
+             {"src":"assets/images/gallery/job-0142/3.jpg","caption":"Bodywork and trim refitted"},
+             {"src":"assets/images/gallery/job-0142/4.jpg","caption":"Finished restoration"}
+           ]'>
+        <span class="gallery-item__tag">RESTORATION</span>
+        <div class="gallery-item__overlay">
+          <h3 class="gallery-item__title">Mk2 rebuild</h3>
+          <p class="gallery-item__type">JOB #0142</p>
+        </div>
       </div>
-      <div class="gallery-item photo-slot">
-        <div class="photo-slot-center"><svg class="slot-icon" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/></svg></div>
-        <div class="slot-tag">CONVERSION</div>
-        <div class="slot-label"><span>JOB #0156</span><span>Transit camper fit-out</span></div>
-      </div>
-      <div class="gallery-item photo-slot">
-        <div class="photo-slot-center"><svg class="slot-icon" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/></svg></div>
-        <div class="slot-tag">MECHANICAL</div>
-        <div class="slot-label"><span>JOB #0163</span><span>Clutch &amp; gearbox</span></div>
-      </div>
-      <div class="gallery-item photo-slot">
-        <div class="photo-slot-center"><svg class="slot-icon" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/></svg></div>
-        <div class="slot-tag">BODYSHOP</div>
-        <div class="slot-label"><span>JOB #0171</span><span>Rear quarter, insurance repair</span></div>
-      </div>
-      <div class="gallery-item photo-slot">
-        <div class="photo-slot-center"><svg class="slot-icon" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/></svg></div>
-        <div class="slot-tag">CONVERSION</div>
-        <div class="slot-label"><span>JOB #0184</span><span>Sprinter workshop build</span></div>
+      <div class="gallery-item"
+           style="background-image:url('assets/images/gallery/job-0156/1.jpg');"
+           data-gallery='[
+             {"src":"assets/images/gallery/job-0156/1.jpg","caption":"Empty van shell"},
+             {"src":"assets/images/gallery/job-0156/2.jpg","caption":"Insulation and lining fitted"},
+             {"src":"assets/images/gallery/job-0156/3.jpg","caption":"Electrics and racking installed"},
+             {"src":"assets/images/gallery/job-0156/4.jpg","caption":"Finished camper fit-out"}
+           ]'>
+        <span class="gallery-item__tag">CONVERSION</span>
+        <div class="gallery-item__overlay">
+          <h3 class="gallery-item__title">Transit camper fit-out</h3>
+          <p class="gallery-item__type">JOB #0156</p>
+        </div>
       </div>
     </div>
   </div>
@@ -310,6 +322,17 @@
     <span id="buildTag">BUILD IN PROGRESS — PLACEHOLDER CONTENT THROUGHOUT</span>
   </div>
 </footer>
+
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Project gallery" hidden>
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close gallery">&#x2715;</button>
+  <button class="lightbox__arrow lightbox__arrow--prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+  <button class="lightbox__arrow lightbox__arrow--next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+  <div class="lightbox__img-wrap">
+    <img class="lightbox__img" id="lightboxImg" src="" alt="Job progress photo" />
+  </div>
+  <p class="lightbox__caption" id="lightboxCaption"></p>
+  <p class="lightbox__counter" id="lightboxCounter"></p>
+</div>
 
 <script src="js/script.js"></script>
 </body>
