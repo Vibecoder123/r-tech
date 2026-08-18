@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (range) {
     range.addEventListener('input', (e) => updateSlider(e.target.value));
-    updateSlider(50);
+    updateSlider(94);
   }
 
   // ---- Gallery lightbox ----
