@@ -449,7 +449,11 @@ section{padding:96px 28px;}
   gap:0;
   align-items:stretch;
 }
-.feature-media{min-height:460px;}
+.feature-media{
+  position:relative;
+  aspect-ratio:1600/975;
+  align-self:center;
+}
 .feature-copy{
   padding:72px 56px;
   display:flex; flex-direction:column; justify-content:center;
@@ -465,7 +469,6 @@ section{padding:96px 28px;}
 .feature-list li::before{content:""; width:8px; height:8px; background:var(--red);}
 @media (max-width:900px){
   .feature{grid-template-columns:1fr;}
-  .feature-media{min-height:300px;}
   .feature-copy{padding:48px 26px;}
 }
 
