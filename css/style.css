@@ -354,7 +354,6 @@ section{padding:96px 28px;}
   background-size:cover;
   background-position:center;
   overflow:hidden;
-  border:1px solid var(--steel-line);
 }
 
 .gallery-item__tag{
