@@ -200,15 +200,10 @@ h1,h2,h3{
     linear-gradient(to right, rgba(27,26,24,0.6) 0%, transparent 45%);
   pointer-events:none;
 }
-.hero-stripe{
-  position:absolute; top:0; right:-10%;
-  width:70%; height:100%;
-  background:linear-gradient(100deg, transparent 42%, var(--red) 42.6%, var(--red) 44%, transparent 44.6%, transparent 55%, var(--amber) 55.4%, var(--amber) 56%, transparent 56.6%);
-  opacity:.9;
-  z-index:1;
-  pointer-events:none;
-}
+
 .hero-content{position:relative; z-index:2; max-width:760px;}
+@media (max-width:859px){ .hero-content .eyebrow{display:none;} }
+
 .hero h1{
   font-size:clamp(42px, 6.4vw, 88px);
   color:var(--offwhite);
@@ -265,9 +260,6 @@ section{padding:96px 28px;}
   transition:background .25s ease;
 }
 .bay:hover{background:var(--panel-light);}
-.bay-num{
-  font-family:'Space Mono',monospace;
-  font-size:12px; color:var(--amber); letter-spacing:.1em;
 }
 .bay h3{font-size:22px; margin:14px 0 12px; color:var(--offwhite); line-height:1.15;}
 .bay p{font-size:14.5px; color:var(--steel); line-height:1.55; margin:0;}
