@@ -1,8 +1,7 @@
 # R-Tech Developments Ltd — Website
 
 Real build. Vanilla HTML/CSS/JS, no framework, no build step — mirrors the
-Brickhaus pattern. Design approved by Mike (mockup sign-off, 2026-07-22).
-This scaffolding is not yet live anywhere.
+Brickhaus pattern. Design approved (mockup sign-off, 2026-07-22).
 
 ## Structure
 
