@@ -31,16 +31,13 @@
 
 <!-- ================= HERO ================= -->
 <header class="hero">
-  <div class="hero-bg">
-    <!-- Real asset: assets/images/hero/hero.jpg (1920x1200 recommended) -->
-    <div class="photo-slot" style="width:100%;height:100%;">
-      <div class="photo-slot-center">
-        <svg class="slot-icon" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.6-3h4.8L16 6"/></svg>
-        <span>HERO PHOTOGRAPHY&#10;Wide shot of the workshop or a hero "after" shot — full bleed</span>
-      </div>
-      <div class="slot-label"><span>1920 × 1200 recommended</span><span>REPLACE</span></div>
-    </div>
+    <div class="hero-bg">
+    <picture>
+      <source media="(max-width: 859px)" srcset="assets/images/hero/hero-mobile.jpg">
+      <img src="assets/images/hero/hero-desktop.jpg" alt="R-Tech Developments workshop — Volkswagen Transporter under the workshop's LED lighting rig">
+    </picture>
   </div>
+
   <div class="hero-stripe"></div>
   <div class="hero-content reveal">
     <span class="eyebrow">General Mechanic — Bodyshop — Restoration — Van Conversion</span>
