@@ -6,7 +6,7 @@
   --red:#D6222B;
   --red-dark:#A81A21;
   --amber:#F0A800;
-    --steel:#8C8780;
+  --steel:#8C8780;
   --text-soft:#A7A299;
   --steel-line: rgba(243,239,230,0.14);
   --chamfer: 14px;
@@ -512,22 +512,31 @@ section{padding:96px 28px;}
   padding:26px 24px;
   position:relative;
 }
-.review-card .stars{color:var(--amber); font-size:14px; letter-spacing:2px;}
+
+.review-card__source{
+  position:absolute; top:12px; right:12px;
+  display:flex; align-items:center; gap:5px;
+  font-family:'Space Mono',monospace; font-size:9.5px; letter-spacing:.05em;
+  color:var(--steel);
+  border:1px solid var(--steel-line); padding:3px 8px;
+}
+.review-card__source svg{width:11px; height:11px; fill:var(--steel);}
+.review-recommend{
+  display:flex; align-items:center; gap:8px;
+  font-family:'Space Mono',monospace; font-size:12px; letter-spacing:.05em;
+  color:var(--amber);
+}
+.review-recommend svg{width:15px; height:15px; stroke:var(--amber); fill:none; stroke-width:2;}
 .review-card p{
   font-size:15px; line-height:1.6; color:#D9D4C8; margin:14px 0 18px;
-  min-height:72px;
 }
 .review-meta{
   display:flex; justify-content:space-between; align-items:center;
   font-family:'Space Mono',monospace; font-size:11px; color:var(--steel); letter-spacing:.04em;
   border-top:1px solid var(--steel-line); padding-top:12px;
 }
-.review-placeholder-tag{
-  position:absolute; top:12px; right:12px;
-  font-family:'Space Mono',monospace; font-size:9.5px; color:var(--red);
-  border:1px solid var(--red); padding:2px 6px; letter-spacing:.05em;
-}
 @media (max-width:860px){ .review-grid{grid-template-columns:1fr;} }
+.reviews-cta{text-align:center; margin-top:40px;}
 
 /* ================= CTA BAND ================= */
 .cta-band{
