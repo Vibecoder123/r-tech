@@ -517,10 +517,11 @@ section{padding:96px 28px;}
   position:absolute; top:12px; right:12px;
   display:flex; align-items:center; gap:5px;
   font-family:'Space Mono',monospace; font-size:9.5px; letter-spacing:.05em;
-  color:var(--steel);
-  border:1px solid var(--steel-line); padding:3px 8px;
+  color:#1877F2;
+  background:#FFFFFF;
+  border:1px solid #1877F2; padding:3px 8px;
 }
-.review-card__source svg{width:11px; height:11px; fill:var(--steel);}
+.review-card__source svg{width:11px; height:11px; fill:#1877F2;}
 .review-recommend{
   display:flex; align-items:center; gap:8px;
   font-family:'Space Mono',monospace; font-size:12px; letter-spacing:.05em;
@@ -535,8 +536,10 @@ section{padding:96px 28px;}
   font-family:'Space Mono',monospace; font-size:11px; color:var(--steel); letter-spacing:.04em;
   border-top:1px solid var(--steel-line); padding-top:12px;
 }
-@media (max-width:860px){ .review-grid{grid-template-columns:1fr;} }
-.reviews-cta{text-align:center; margin-top:40px;}
+@media (max-width:860px){
+  .review-grid{grid-template-columns:1fr;}
+  .review-recommend{margin-top:32px;}
+}
 
 /* ================= CTA BAND ================= */
 .cta-band{
