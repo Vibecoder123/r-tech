@@ -106,4 +106,56 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') nextImage();
   });
 
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox || lightbox.hidden) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  prevImage();
+    if (e.key === 'ArrowRight') nextImage();
+  });
+
+  // ---- Contact form (AJAX submit + inline success state) ----
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess  = document.getElementById('formSuccess');
+
+  if (contactForm && formSuccess) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      const submitBtn = contactForm.querySelector('[type="submit"]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      const formData = new FormData(contactForm);
+      formData.append('_replyto', formData.get('email'));
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: contactForm.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' },
+        });
+
+        if (!response.ok) throw new Error('Formspree submission failed');
+
+        formSuccess.hidden = false;
+        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        contactForm.reset();
+      } catch (err) {
+        alert("Sorry, something went wrong sending your enquiry. Please call us directly on 07766 864696, or try again in a moment.");
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Enquiry';
+        }
+      }
+    });
+  }
+
 });
