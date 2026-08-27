@@ -601,6 +601,39 @@ section{padding:96px 28px;}
   border-color:var(--amber);
 }
 .cta-form textarea{min-height:90px;}
+.cta-form select{
+  width:100%;
+  background:var(--panel);
+  border:1px solid var(--steel-line);
+  color:var(--offwhite);
+  font-family:'Barlow',sans-serif;
+  font-size:15px;
+  padding:10px 36px 10px 12px;
+  appearance:none;
+  -webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238C8780' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 10px center;
+  background-size:16px;
+  cursor:pointer;
+}
+.cta-form select:focus{
+  outline:2px solid var(--amber);
+  outline-offset:1px;
+  border-color:var(--amber);
+}
+.cta-form select option{background:var(--panel); color:var(--offwhite);}
+.cta-form .form-success{
+  display:flex; align-items:flex-start; gap:10px;
+  margin-top:14px;
+  padding:12px 14px;
+  border:1px solid var(--amber);
+  background:rgba(240,168,0,0.08);
+  color:var(--offwhite);
+  font-size:14px;
+  line-height:1.4;
+}
+.cta-form .form-success svg{flex-shrink:0; width:18px; height:18px; margin-top:1px; stroke:var(--amber); fill:none; stroke-width:1.8;}
 .cta-form .btn{width:100%; text-align:center; border:none; cursor:pointer; margin-top:2px;}
 .hp-field{
   position:absolute;
