@@ -504,7 +504,6 @@ section{padding:96px 28px;}
 @media (max-width:860px){ .booth{grid-template-columns:1fr;} .spec-list{grid-template-columns:1fr 1fr;} }
 
 /* ================= REVIEWS ================= */
-.reviews{background:var(--panel);}
 .review-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
 .review-card{
   background:var(--graphite);
