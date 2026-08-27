@@ -247,6 +247,7 @@ section{padding:96px 28px;}
 
 /* ================= BAYS ================= */
 .bays{background:var(--graphite);}
+.bays .section-head h2 em{ font-style:normal; color:var(--amber); }
 .bay-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
