@@ -521,6 +521,13 @@ section{padding:96px 28px;}
   background:#FFFFFF;
   border:1px solid #1877F2; padding:3px 8px;
 }
+.review-card__source{
+  display:flex; align-items:center; gap:5px;
+  font-family:'Space Mono',monospace; font-size:9.5px; letter-spacing:.05em;
+  color:#1877F2;
+  background:#FFFFFF;
+  border:1px solid #1877F2; padding:3px 8px;
+}
 .review-card__source svg{width:11px; height:11px; fill:#1877F2;}
 .review-recommend{
   display:flex; align-items:center; gap:8px;
@@ -538,15 +545,6 @@ section{padding:96px 28px;}
 }
 @media (max-width:860px){
   .review-grid{grid-template-columns:1fr;}
-  .review-recommend{margin-top:32px;}
-}
-
-/* ================= CTA BAND ================= */
-.cta-band{
-  background:var(--red);
-  padding:90px 28px;
-  position:relative;
-  overflow:hidden;
 }
 .cta-band::before{
   content:"";
@@ -557,8 +555,19 @@ section{padding:96px 28px;}
 .cta-inner{
   max-width:900px; margin:0 auto; text-align:left;
   position:relative; z-index:1;
-  display:flex; justify-content:space-between; align-items:center; gap:30px; flex-wrap:wrap;
+  display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap;
 }
+.cta-inner h2{font-size:clamp(30px,4vw,50px); color:var(--graphite);}
+.cta-inner .eyebrow{color:var(--graphite); opacity:.65;}
+.cta-inner p{color:rgba(27,26,24,0.75); margin-top:10px; font-size:16px;}
+.cta-contact-list{margin-top:26px; display:flex; flex-direction:column; gap:10px;}
+.cta-contact-list li{
+  font-family:'Space Mono',monospace;
+  font-size:13px; letter-spacing:.02em;
+  color:rgba(27,26,24,0.8);
+}
+.cta-contact-list a{color:inherit;}
+.cta-contact-list a:hover{color:var(--graphite);}
 .cta-inner h2{font-size:clamp(30px,4vw,50px); color:var(--graphite);}
 .cta-inner .eyebrow{color:var(--graphite); opacity:.65;}
 .cta-inner p{color:rgba(27,26,24,0.75); margin-top:10px; font-size:16px;}
@@ -583,7 +592,9 @@ section{padding:96px 28px;}
   color:var(--amber);
   margin-bottom:6px;
 }
-.cta-form input[type="text"],
+..cta-form input[type="text"],
+.cta-form input[type="email"],
+.cta-form input[type="tel"],
 .cta-form textarea{
   width:100%;
   background:var(--panel);
@@ -595,6 +606,8 @@ section{padding:96px 28px;}
   resize:vertical;
 }
 .cta-form input[type="text"]:focus,
+.cta-form input[type="email"]:focus,
+.cta-form input[type="tel"]:focus,
 .cta-form textarea:focus{
   outline:2px solid var(--amber);
   outline-offset:1px;
@@ -624,7 +637,7 @@ section{padding:96px 28px;}
 }
 .cta-form select option{background:var(--panel); color:var(--offwhite);}
 .cta-form .form-success{
-  display:flex; align-items:flex-start; gap:10px;
+  align-items:flex-start; gap:10px;
   margin-top:14px;
   padding:12px 14px;
   border:1px solid var(--amber);
@@ -633,6 +646,7 @@ section{padding:96px 28px;}
   font-size:14px;
   line-height:1.4;
 }
+.cta-form .form-success:not([hidden]){display:flex;}
 .cta-form .form-success svg{flex-shrink:0; width:18px; height:18px; margin-top:1px; stroke:var(--amber); fill:none; stroke-width:1.8;}
 .cta-form .btn{width:100%; text-align:center; border:none; cursor:pointer; margin-top:2px;}
 .hp-field{
