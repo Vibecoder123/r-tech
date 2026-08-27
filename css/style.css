@@ -512,15 +512,6 @@ section{padding:96px 28px;}
   padding:26px 24px;
   position:relative;
 }
-
-.review-card__source{
-  position:absolute; top:12px; right:12px;
-  display:flex; align-items:center; gap:5px;
-  font-family:'Space Mono',monospace; font-size:9.5px; letter-spacing:.05em;
-  color:#1877F2;
-  background:#FFFFFF;
-  border:1px solid #1877F2; padding:3px 8px;
-}
 .review-card__source{
   display:flex; align-items:center; gap:5px;
   font-family:'Space Mono',monospace; font-size:9.5px; letter-spacing:.05em;
