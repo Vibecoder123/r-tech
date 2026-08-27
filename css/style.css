@@ -537,6 +537,12 @@ section{padding:96px 28px;}
 @media (max-width:860px){
   .review-grid{grid-template-columns:1fr;}
 }
+.cta-band{
+  background:var(--red);
+  padding:90px 28px;
+  position:relative;
+  overflow:hidden;
+}
 .cta-band::before{
   content:"";
   position:absolute; inset:0;
@@ -559,9 +565,6 @@ section{padding:96px 28px;}
 }
 .cta-contact-list a{color:inherit;}
 .cta-contact-list a:hover{color:var(--graphite);}
-.cta-inner h2{font-size:clamp(30px,4vw,50px); color:var(--graphite);}
-.cta-inner .eyebrow{color:var(--graphite); opacity:.65;}
-.cta-inner p{color:rgba(27,26,24,0.75); margin-top:10px; font-size:16px;}
 .cta-band .btn-primary{background:var(--graphite); color:var(--offwhite);}
 .cta-band .btn-primary:hover{background:#000;}
 
@@ -583,7 +586,7 @@ section{padding:96px 28px;}
   color:var(--amber);
   margin-bottom:6px;
 }
-..cta-form input[type="text"],
+.cta-form input[type="text"],
 .cta-form input[type="email"],
 .cta-form input[type="tel"],
 .cta-form textarea{
