@@ -1,94 +1,51 @@
-# R-Tech Developments Ltd — Website
+# R-Tech Developments Ltd
 
-Real build. Vanilla HTML/CSS/JS, no framework, no build step — mirrors the
-Brickhaus pattern. Design approved (mockup sign-off, 2026-07-22).
+Website for R-Tech Developments, a vehicle workshop in Eastleigh, Hampshire covering general mechanical work, bodyshop repairs, restoration, van conversions and wraps, and an on-site spray booth.
+
+Live: https://rtechdevelopments.co.uk
+
+## Stack
+
+Plain HTML, CSS and JavaScript with no framework and no build step. Hosted on Cloudflare Pages, which deploys automatically on every push to `main`. Domain, DNS and the www-to-apex redirect are also on Cloudflare. The contact form posts to Formspree.
+
+## What's on the page
+
+- Scroll-triggered reveal animations
+- Before/after comparison slider (drag handle plus a range input for keyboard users)
+- Job gallery with a lightbox, one card per job and captioned photos
+- Contact form submitted with `fetch`, a honeypot field for spam, and an inline success message
+- Separate hero images for desktop and mobile
+- Open Graph and Twitter card tags for link previews
 
 ## Structure
 
 ```
-rtech/
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-├── assets/
-│   └── images/
-│       ├── README.md        ← what goes where, and how to swap in
-│       ├── logo/
-│       ├── hero/
-│       ├── slider/
-│       ├── gallery/
-│       ├── conversions/
-│       └── booth/
-└── README.md                ← this file
+index.html
+css/style.css
+js/script.js
+assets/images/
+  booth/  conversions/  gallery/job-NNNN/  hero/  logo/  slider/
 ```
 
-## Status right now
+Each gallery job has its own folder, and its photos are listed in the card's `data-gallery` attribute in `index.html`.
 
-- All copy, layout, and the signature before/after slider are in place and
-  working.
-- Every photo slot is an intentional styled placeholder (not a broken
-  image) — see `assets/images/README.md` for what's expected in each and
-  how to swap it in once supplied.
-- Nav/footer logo is a text wordmark stand-in — see
-  `assets/images/logo/README.md`-equivalent notes in
-  `assets/images/README.md` for sourcing the real one.
-- Contact form has no backend wired yet (still an open decision).
-- Reviews are placeholder-tagged, pending real quotes from Facebook.
-- Contact details (phone/address/hours) are bracketed placeholders in the
-  footer.
+## Running locally
 
-None of the above block deployment — the site is safe to push and preview
-as-is.
+Serve the repo root with any static server, for example:
 
-## Local preview
-
-No build step needed. Either:
-
-```bash
-open index.html
 ```
-
-or, for a closer-to-production preview (recommended, avoids any
-relative-path quirks):
-
-```bash
 python3 -m http.server 8000
-# then visit http://localhost:8000
 ```
 
-## Deploying (GitHub → Cloudflare Pages)
+Then open http://localhost:8000. Submissions from a local copy still go to the live Formspree form, so they land in the client's inbox.
 
-This repo is not yet pushed anywhere. Suggested repo name: `rtech` or
-`rtechdevelopments`, mirroring the Brickhaus naming pattern.
+## Decisions
 
-1. Create a new GitHub repo (empty, no README/template).
-2. From this folder:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial site structure"
-   git branch -M main
-   git remote add origin git@github.com:<your-username>/rtech.git
-   git push -u origin main
-   ```
-3. In Cloudflare dashboard: **Workers & Pages → Create → Pages → Connect to Git**,
-   select the new repo. Build settings: no build command, no framework
-   preset — output directory `/` (root), since this is static HTML with
-   no build step.
-4. Cloudflare will assign a `*.pages.dev` preview URL immediately — confirm
-   the site loads correctly there before touching DNS on the real domain.
-5. **Do not touch the `rtechdevelopments.co.uk` nameservers yet.** That's a
-   separate, later step: add the domain as a custom domain in the
-   Cloudflare Pages project first (this generates the nameservers to use),
-   *then* update them via the Unlimited Web Hosting UK Ltd Client Area →
-   My Domains → Manage Nameservers. See the project's going-live checklist
-   for the full launch-day sequence — verify against Cloudflare's current
-   docs at that time rather than relying on this note.
+- **No framework.** It's a single page that a small business needs to stay fast and cheap to run, and hosting costs nothing.
+- **Formspree for the form.** A static host has no server to send mail from. The form endpoint is only in the form's `action` attribute, and the script reads it from there.
+- **Facebook linked, not embedded through the Graph API.** A static site can't keep an access token secret.
+- **Filename case matters.** Cloudflare Pages is case-sensitive, so a path that differs from the file only in letter case returns a 404 in production even though it works locally on macOS or Windows.
 
-## Git hygiene reminder
+---
 
-New image files must be explicitly `git add`-ed — untracked images are a
-common silent-failure cause ("it's not showing up" is usually actually
-"it never got pushed").
+Built by [Moi / Vibecoder123].
